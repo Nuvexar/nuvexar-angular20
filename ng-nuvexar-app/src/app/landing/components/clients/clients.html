@@ -1,0 +1,243 @@
+<section id="clientes" class="py-10 px-6 md:px-12 bg-white relative">
+  <!-- Background Dots Pattern -->
+  <div class="absolute inset-0 bg-dots opacity-50"></div>
+
+  <!-- Decorative Bubbles -->
+  <div class="absolute w-32 h-32 rounded-full bg-blue-100 opacity-30 top-20 right-10 blur-xl"></div>
+  <div
+    class="absolute w-40 h-40 rounded-full bg-blue-100 opacity-20 bottom-40 left-10 blur-xl"
+  ></div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#0f2c59] mb-4" appOnView="animate-fadeIn">Nuestros Clientes</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto" appOnView="animate-fadeIn" style="animation-delay: 0.2s">
+        Conoce algunos de los proyectos web que hemos desarrollado y las redes sociales que
+        gestionamos para nuestros clientes.
+      </p>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="flex justify-center mb-12" appOnView="animate-fadeIn" style="animation-delay: 0.3s">
+      <div class="bg-gray-100 p-1 rounded-full">
+        <button
+          id="tab-websites"
+          class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300"
+          [class.active]="activeTab() === 'web'"
+          (click)="setTab('web')"
+        >
+          Páginas Web
+        </button>
+        <button
+          id="tab-social"
+          class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300"
+          [class.active]="activeTab() === 'social'"
+          (click)="setTab('social')"
+        >
+          Redes Sociales
+        </button>
+      </div>
+    </div>
+
+    <!-- Websites Tab Content -->
+    <div id="websites-content" class="tab-content" [class.tab-hidden]="activeTab() !== 'web'">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Website Project 1 -->
+        <div
+          class="website-card rounded-xl shadow-lg overflow-hidden"
+          appOnView="animate-fadeIn"
+          style="animation-delay: 0.4s"
+        >
+          <div class="relative group overflow-hidden">
+            <img
+              src="assets/img/Isalda-Zelaya.webp"
+              alt="Isalda Zelaya - Sitio Web"
+              class="project-image w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <a
+                href="https://www.serviciosenfermeriazelaya.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white flex justify-center items-center h-full text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              >
+                Ver Proyecto
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#0f2c59] mb-2">Enfermería Zelaya</h3>
+            <p class="text-gray-600 mb-4">
+              Página web creada para reflejar la vocación, trayectoria y servicios de la enfermera
+              Isalda Zelaya.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Enfermería</span
+              >
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                >Informativo</span
+              >
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                >Servicios</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Website Project 2 -->
+        <div
+          class="website-card rounded-xl shadow-lg overflow-hidden"
+          appOnView="animate-fadeIn"
+          style="animation-delay: 0.5s"
+        >
+          <div class="relative group overflow-hidden">
+            <img
+              src="assets/img/texvye.webp"
+              alt="Clínica Dental Sonrisa - Sitio Web"
+              class="project-image w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <a
+                href="https://texvye.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex justify-center items-center h-full text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-green-400 transition-colors"
+              >
+                Ver Proyecto
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#0f2c59] mb-2">TEXVYE</h3>
+            <p class="text-gray-600 mb-4">
+              Página web para una marca de diseño textil y estampados personalizados, mostrando sus
+              servicios y trabajos destacados.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Textil</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                >Sublimación</span
+              >
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm"
+                >Marca Local</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Website Project 3 -->
+        <div
+          class="website-card rounded-xl shadow-lg overflow-hidden"
+          appOnView="animate-fadeIn"
+          style="animation-delay: 0.5s"
+        >
+          <div class="relative group overflow-hidden">
+            <img
+              src="assets/img/logo-chakan-card.webp"
+              alt="Logo chakan"
+              class="project-image w-full h-48"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <a
+                [routerLink] = "['/proyecto-en-construccion']"
+                class="flex justify-center items-center h-full text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-red-500 transition-colors"
+              >
+                Ver Proyecto
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#0f2c59] mb-2">Videojuegos CHAKAN</h3>
+            <p class="text-gray-600 mb-4">
+              Página web dedicada a la tecnología, videojuegos y artículos electrónicos. Mostramos
+              productos, promociones y contenido entretenido.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Tecnología</span
+              >
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                >Accesorios</span
+              >
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm"
+                >Negocio</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Tab Content -->
+    <div id="social-content" class="tab-content" [class.tab-hidden]="activeTab() !== 'social'">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Social Media Client 1 -->
+        <div
+          class="social-card bg-white rounded-xl shadow-lg p-4"
+          appOnView="animate-fadeIn"
+          style="animation-delay: 0.5s"
+        >
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 rounded-full overflow-hidden mr-3 border-2 border-green-500">
+              <img
+                src="assets/img/logo-chakan.webp"
+                alt="Logo chakan"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3 class="title-social-media text-xl font-semibold text-[#0f2c59]">
+                Videojuegos CHAKAN
+              </h3>
+              <p class="text-gray-600">Tecnología a tu alcance</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-600 mb-3">
+              Contenido sobre tecnología, gaming y promoción de productos electrónicos.
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div class="bg-blue-50 p-3 rounded-lg">
+                <div class="text-2xl font-bold text-blue-600">866</div>
+                <div class="text-sm text-gray-600">Seguidores</div>
+              </div>
+              <div class="bg-green-50 p-3 rounded-lg">
+                <div class="text-2xl font-bold text-green-600">562</div>
+                <div class="text-sm text-gray-600">Seguidores</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=100054346849613&locale=es_LA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg text-center hover:bg-blue-700 transition-colors"
+            >
+              <i class="fab fa-facebook-f mr-1"></i> Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/videojuegoschakan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 bg-pink-600 text-white py-2 px-3 rounded-lg text-center hover:bg-pink-700 transition-colors"
+            >
+              <i class="fab fa-instagram mr-1"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

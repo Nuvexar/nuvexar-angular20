@@ -1,0 +1,57 @@
+<div class="gradient-bg min-h-screen flex items-center justify-center relative">
+  <!-- Decorative Bubbles -->
+    <div class="bubble" style="width: 150px; height: 150px; top: 20%; left: 10%; animation-delay: 0s; animation-duration: 15s;"></div>
+    <div class="bubble" style="width: 80px; height: 80px; top: 30%; right: 20%; animation-delay: 2s; animation-duration: 12s;"></div>
+    <div class="bubble" style="width: 60px; height: 60px; bottom: 20%; left: 5%; animation-delay: 1s; animation-duration: 10s;"></div>
+    <div class="bubble" style="width: 120px; height: 120px; bottom: 10%; right: 15%; animation-delay: 3s; animation-duration: 18s;"></div>
+    <div class="bubble" style="width: 40px; height: 40px; top: 60%; left: 30%; animation-delay: 4s; animation-duration: 8s;"></div>
+
+    <!-- Floating Particles -->
+    <div class="floating-dots">
+        <div class="dot" style="width: 6px; height: 6px; top: 10%; left: 20%; animation: float 8s infinite ease-in-out; animation-delay: 0s;"></div>
+        <div class="dot" style="width: 8px; height: 8px; top: 30%; left: 70%; animation: float 12s infinite ease-in-out; animation-delay: 1s;"></div>
+        <div class="dot" style="width: 4px; height: 4px; top: 70%; left: 40%; animation: float 10s infinite ease-in-out; animation-delay: 2s;"></div>
+        <div class="dot" style="width: 5px; height: 5px; top: 50%; left: 80%; animation: float 9s infinite ease-in-out; animation-delay: 3s;"></div>
+        <div class="dot" style="width: 7px; height: 7px; top: 80%; left: 10%; animation: float 11s infinite ease-in-out; animation-delay: 4s;"></div>
+        <div class="dot" style="width: 6px; height: 6px; top: 40%; left: 30%; animation: float 13s infinite ease-in-out; animation-delay: 2.5s;"></div>
+        <div class="dot" style="width: 4px; height: 4px; top: 60%; left: 60%; animation: float 14s infinite ease-in-out; animation-delay: 1.5s;"></div>
+        <div class="dot" style="width: 5px; height: 5px; top: 20%; left: 50%; animation: float 15s infinite ease-in-out; animation-delay: 3.5s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8 md:py-12">
+        <!-- Logo Section -->
+        <div class="mb-10 flex justify-center" style="animation-delay: 0.2s;">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" aria-label="Logo de Nuvexar" role="img" style="height: 40px;">
+                <!-- Texto Nuvexar -->
+                <text x="10" y="25" font-family="Poppins, sans-serif" font-size="24" font-weight="700">
+                    <tspan fill="#FFFFFF">Nuvex</tspan>
+                    <tspan fill="#00aafe" x="88">ar</tspan>
+                </text>
+            </svg>
+        </div>
+        <!-- Simple Icon -->
+        <div class="mb-8 md:mb-12" style="animation-delay: 0.4s;">
+            <div class="opacity-50 rounded-full p-6 md:p-8 backdrop-blur-sm border border-white inline-block">
+                <i class="fas fa-tools text-4xl md:text-5xl lg:text-6xl text-blue-300"></i>
+            </div>
+        </div>
+        <!-- Main Message -->
+        <div class="max-w-4xl mx-auto mb-6 md:mb-8" style="animation-delay: 0.6s;">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 md:mb-6 px-4">
+                Página en <span class="text-[#00aafe]">Construcción</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-6 md:mb-8 px-4 max-w-3xl mx-auto">
+                Estamos en la etapa final del desarrollo. Muy pronto vas a poder explorar la versión completa con todas sus novedades.
+            </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4" style="animation-delay: 1s;">
+            <a routerLink="/" class="bg-transparent border-2 border-white text-white font-medium py-2 md:py-3 px-6 md:px-8 rounded-full hover:bg-white hover:text-[#0f2c59] transition-all duration-300 text-sm md:text-base w-full sm:w-auto text-center">
+                <i class="fas fa-home mr-2"></i>
+                Volver a Nuvexar
+            </a>
+        </div>
+    </main>
+</div>
