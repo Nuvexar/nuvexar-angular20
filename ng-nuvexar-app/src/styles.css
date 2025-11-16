@@ -95,44 +95,6 @@ body {
   pointer-events: none;
 }
 
-.service-card {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(59, 130, 246, 0.1);
-  z-index: 0;
-  transition: all 0.5s ease;
-}
-
-.service-card:hover::before {
-  transform: scale(1.5);
-}
-
-.service-icon {
-  transition: all 0.5s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.2) rotate(5deg);
-}
-
 .btn-primary {
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   transition: all 0.3s ease;
@@ -163,84 +125,59 @@ body {
   box-shadow: 0 10px 15px -3px rgb(176 188 209 / 50%);
 }
 
-/* SE COMENTO AQUI LA LINEA DE OPACITY */
-.fade-in {
-  /* opacity: 0; */
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.6s ease;
+.btn-primary:disabled,
+.btn-primary[disabled],
+.btn-primary.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-.fade-in.active {
-  opacity: 1;
-  transform: translateY(0);
+/* deshabilitar ripple */
+.btn-primary:disabled::after {
+  transform: scale(0) !important;
 }
 
-.navbar {
-  transition: all 0.5s ease;
-  background-color: #000000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* evitar hover cuando está disabled */
+.btn-primary:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-#mobile-menu {
-  background-color: #000000;
+/* -------------------------------- */
+/* @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Estado abierto */
-#mobile-menu.open {
-  max-height: 500px;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease both;
+} */
+
+/* ------------------------------------- */
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-#mobile-menu {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
-  pointer-events: none; /* evita clicks mientras está cerrado */
+@keyframes slide {
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
 }
 
-.hamburger {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  position: relative;
+.animate-fadeIn {
+  animation:
+    fade 0.3s ease both,
+    slide 0.6s ease both;
 }
-
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom {
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  top: 0;
-  left: 0;
-  background: #fff;
-  transform: rotate(0);
-  transition: all 0.5s;
-}
-
-.hamburger-middle {
-  transform: translateY(7px);
-}
-
-.hamburger-bottom {
-  transform: translateY(14px);
-}
-
-.open .hamburger-top {
-  transform: rotate(45deg) translateY(6px) translateX(6px);
-}
-
-.open .hamburger-middle {
-  display: none;
-}
-
-.open .hamburger-bottom {
-  transform: rotate(-45deg) translateY(6px) translateX(-6px);
-}
+/* ----------------------------------- */
 
 .floating-dots {
   position: absolute;
@@ -259,51 +196,9 @@ body {
   border-radius: 50%;
 }
 
-.section-divider {
-  height: 55px;
-  overflow: hidden;
-  position: relative;
-}
-
-.section-divider.top {
-  margin-top: -100px;
-}
-
-.section-divider.bottom {
-  margin-bottom: -100px;
-}
-
-.divider-wave {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.wave-top {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23d4dce5'/%3E%3C/svg%3E");
-}
-
-.wave-bottom {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230f2c59'/%3E%3C/svg%3E");
-  transform: rotate(180deg);
-}
-
 .bg-dots {
   background-image: radial-gradient(rgba(59, 130, 246, 0.1) 2px, transparent 2px);
   background-size: 30px 30px;
-}
-
-.logo-container {
-  display: inline-block;
-}
-
-.logo-container svg {
-  height: 32px;
-  width: auto;
-  font-style: normal;
 }
 
 @keyframes sunGlow {
@@ -328,70 +223,6 @@ body {
   }
 }
 
-.tab-btn {
-  color: #6b7280;
-}
-
-.tab-btn.active {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
-}
-
-.website-card {
-  transition: all 0.2s ease;
-}
-
-.website-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15);
-}
-
-.social-card {
-  transition: all 0.2s ease;
-}
-
-.social-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15);
-}
-
-form button.btn-primary {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-form .btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background: rgba(235, 237, 240, 0.23);
-  border-radius: 50%;
-  transform: scale(0) translate(-50%, -50%);
-  transform-origin: left top;
-  transition: transform 0.5s ease;
-}
-
-/* Boton flotante WhatsApp */
-.btn-wsp {
-  position: fixed;
-  width: 65px;
-  height: 65px;
-  border-radius: 50px;
-  bottom: 85px;
-  right: 0px;
-  z-index: 100;
-  transition: all 300ms ease;
-}
-
-.btn-wsp:hover {
-  background: #20ba5a;
-}
-
 /* Google recaptcha */
 .grecaptcha-badge {
   z-index: 9999 !important;
@@ -399,28 +230,6 @@ form .btn-primary::after {
 
 @media (max-width: 640px) {
   p {
-    font-size: 14px;
-  }
-
-  form label,
-  input::placeholder {
-    font-size: 14px;
-  }
-
-  textarea {
-    font-size: 16px !important;
-  }
-
-  footer .title-links {
-    font-size: 16px;
-  }
-
-  .title-social-media {
-    font-size: 16px;
-  }
-
-  .links li a,
-  li span {
     font-size: 14px;
   }
 }
@@ -436,12 +245,5 @@ form .btn-primary::after {
   .btn-primary:hover {
     transform: none;
     box-shadow: none;
-  }
-  .website-card:hover,
-  .social-card:hover {
-    transform: none;
-  }
-  .btn-wsp:hover {
-    background: none;
   }
 }
