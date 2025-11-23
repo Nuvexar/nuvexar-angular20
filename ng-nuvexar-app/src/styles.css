@@ -48,16 +48,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Oculta la insignia globalmente */
-.grecaptcha-badge {
-    visibility: hidden;
-}
-
-/* La muestra solo si el body tiene la clase 'recaptcha-visible' */
-body.recaptcha-visible .grecaptcha-badge {
-    visibility: visible;
-}
-
 .gradient-bg {
   background: radial-gradient(circle at 80% 10%, rgba(18, 43, 185, 0.8), transparent 50%),
     radial-gradient(circle at 30% 0%, black, transparent 60%),
@@ -105,34 +95,6 @@ body.recaptcha-visible .grecaptcha-badge {
   pointer-events: none;
 }
 
-.bg-dots {
-  background-image: radial-gradient(rgba(59, 130, 246, 0.1) 2px, transparent 2px);
-  background-size: 30px 30px;
-}
-
-@keyframes sunGlow {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
-  }
-}
-
-@keyframes rayPulse {
-  0%,
-  100% {
-    opacity: 0.7;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-/* #region Estilos para Boton */
 .btn-primary {
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   transition: all 0.3s ease;
@@ -182,7 +144,6 @@ body.recaptcha-visible .grecaptcha-badge {
   transform: none !important;
   box-shadow: none !important;
 }
-/* #endregion */
 
 /* -------------------------------- */
 /* @keyframes fadeIn {
@@ -202,27 +163,65 @@ body.recaptcha-visible .grecaptcha-badge {
 
 /* ------------------------------------- */
 @keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes slide {
-  0% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
 }
 
 .animate-fadeIn {
-  animation: fade 0.3s ease both, slide 0.6s ease both;
+  animation:
+    fade 0.3s ease both,
+    slide 0.6s ease both;
 }
 /* ----------------------------------- */
+
+.floating-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(59, 130, 246, 0.1) 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+@keyframes sunGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
+  }
+}
+
+@keyframes rayPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
 
 /* Google recaptcha */
 .grecaptcha-badge {
