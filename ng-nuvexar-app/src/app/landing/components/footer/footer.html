@@ -1,10 +1,11 @@
-<footer class="gradient-bg-other text-white py-12 px-6 md:px-12 relative" role="contentinfo">
-  <!-- Decorative Bubbles -->
-  <div class="absolute w-40 h-40 rounded-full bg-blue-900 opacity-30 top-10 left-10 blur-xl"></div>
-  <div
-    class="absolute w-32 h-32 rounded-full bg-blue-900 opacity-20 bottom-10 right-10 blur-xl"
-  ></div>
-
+<footer class="gradient-bg-other text-white py-12 px-6 md:px-12 relative" role="contentinfo"
+  appParticles
+  appBubbles
+  [bubblesPositions]="[
+    { top: 10, left: 10, size: 40 },
+    { bottom: 10, right: 10, size: 32 }
+  ]"
+>
   <div class="container mx-auto relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
@@ -164,7 +165,7 @@
                 d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"
               />
             </svg>
-            <span class="text-blue-200">nuvexar&#64;gmail.com</span>
+            <span class="text-blue-200">hola&#64;nuvexarteam.com</span>
           </li>
         </ul>
       </div>
