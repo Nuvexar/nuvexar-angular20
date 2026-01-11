@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, Renderer2, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DOCUMENT, inject, OnDestroy, OnInit, Renderer2, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { OnView } from '../../../shared/directives/on-view';
 import { ToastService } from '../../../shared/components/toast/toast.service';
@@ -17,6 +17,7 @@ export class Contact implements OnInit, OnDestroy {
   private fb = inject(FormBuilder);
   private toast = inject(ToastService);
   private renderer = inject(Renderer2);
+  private document = inject(DOCUMENT);
   private mailService = inject(MailService);
   private recaptchaService = inject(RecaptchaService);
 
@@ -43,11 +44,11 @@ export class Contact implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Carga script + muestra badge
     this.recaptchaService.loadScript();
-    this.renderer.addClass(document.body, 'recaptcha-visible');
+    this.renderer.addClass(this.document.body, 'recaptcha-visible');
   }
 
   ngOnDestroy() {
-    this.renderer.removeClass(document.body, 'recaptcha-visible');
+    this.renderer.removeClass(this.document.body, 'recaptcha-visible');
   }
 
   // Convertimos onSubmit en async para esperar la respuesta de Google
