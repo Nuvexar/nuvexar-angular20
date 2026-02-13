@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, input, effect, inject } from '@angular/core';
+import { Directive, ElementRef, Renderer2, input, effect, inject, OnDestroy } from '@angular/core';
 
 /**
  * ============================================================================
@@ -93,7 +93,7 @@ export type BubblePosition = {
 @Directive({
   selector: '[appBubbles]',
 })
-export class Bubbles {
+export class Bubbles implements OnDestroy {
   // ---------------------------------------------
   // Inputs (Angular 20 Signals)
   // ---------------------------------------------
